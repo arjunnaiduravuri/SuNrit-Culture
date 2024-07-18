@@ -1,0 +1,331 @@
+:root{
+    --browncolor :#b50000;
+    --yellowcolor:#f7b300;
+    --orangecolor:#F24617;
+}
+body{
+    background-color: white;
+}
+.our-value{
+    width: 95%;
+    background-color: white;
+    height: 90vh;
+    display: flex;
+}
+.our-left{
+    width: 50%;
+    height: 100%;
+    border-top-right-radius: 60px;
+    overflow: hidden;
+}
+.our-left img{
+    width: 100%;
+    height: 100%;
+}
+.our-right{
+    width: 50%;
+    height: 100%;
+}
+.our-r-top{
+    height: 45%;
+    padding: 0px 100px;
+}
+.our-r-top h3{
+    color: var(--browncolor);
+}
+.our-r-top h1{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 25px auto;
+}
+.our-r-top p{
+    font-size: 1.2rem;
+}
+.our-r-bottom{
+    height: 55%;
+    width: 130%;
+    margin-left: -240px;
+    padding: 60px 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    border-radius: 80px;
+    border-bottom-left-radius: 0px;
+}
+.icon{
+    height: 80px;
+    width: 80px;
+    margin: 10px auto;
+}
+.icon img{
+    width: 100%;
+    height: 100%;
+}
+.our-box-con h1{
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 15px auto;
+}
+.our-box-con p{
+    text-align: center;
+    font-size: 1.1rem;
+}
+.meet-speakers{
+    background-color: white;
+}
+.meet-speakers h6{
+    color: #212529;
+    padding-top: 30px ;
+    padding-left: 120px;
+    font-size: 24px;
+}
+.meet-speakers .h{
+    padding-left: 120px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: "PlayFair Display", serif;
+}
+.speakers-show{
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.swiper-sp {
+    width: 80%;
+    height: 100%;
+    margin: 20px auto;
+    margin-bottom: 0px;
+}
+.mySwiper-sp-sm{
+    display: none;
+}
+.swiper-sp .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+}
+.sp-image{
+    width: 100%;
+    height: 70%;
+    border-radius: 40px;
+    overflow: hidden;
+    border:1px solid black;
+}
+.sp-image img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.9s ease-in-out;
+}
+.sp-icons{
+    display: none;
+}
+.speakers-show:hover .sp-icons{
+    margin-top: -70px;
+    margin-left: 35px;
+    position: absolute;
+    display: flex;
+    gap: 20px;
+}
+.sp-icons i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+}
+.sp-icons .inst{
+    color: #F24617;
+}
+.sp-icons .fb{
+    color: rgb(37, 69, 229);
+}
+.sp-icons .tw{
+    color: rgb(2, 206, 206);
+}
+.sp-icons .in{
+    color: rgb(6, 78, 165);
+}
+.sp-icons i:hover{
+    background-color: black;
+    color: white;
+}
+.speakers-show:hover .sp-image img{
+    transform: scale(1.1);
+}
+.sp-info h1{
+    padding-top: 20px;
+    font-size: 1.5rem;
+}
+.sp-info h1:hover{
+    color: #ffb347;
+}
+/* .sp-info p{
+    color: rgb(32, 32, 251);
+} */
+.exhibitors{
+    background-image: url(assests/brand_bg_1.jpg);
+    height: 50vh;
+    margin-top: 80px;
+    color: white;
+}
+.exhibitors h6{
+    padding-top: 80px;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 500;
+}
+.exhibitors h1{
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+.objective{
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    
+    margin-bottom: 60px;
+}
+.obj-left{
+    padding: 30px;
+    width: 50%;
+}
+.obj-left h1{
+    color: #212529;
+    font-family: "playFair Display",serif;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.obj-left p{
+    font-size: 0.9rem;
+    text-align: justify;
+}
+.obj-right{
+    width: 50%;
+    height: 300px;
+    margin-left: 0px;
+    padding-left: 30px;
+}
+.obj-right .a-left{
+    width: 450px;
+    height: 100%;
+}
+.obj-right .a-left img{
+    height: 100%;
+    width: 100%;
+}
+.f-row1{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.f-row1 h6{
+    font-size: 1rem;
+    margin-bottom:25px;
+}
+@media (max-width:600px){
+    
+    .swiper-sp{
+        display: none;
+    }
+    .meet-speakers{
+        height: 56vh;
+    }
+    .mySwiper-sp-sm{
+        display: block;
+        width: 200px;
+        height: 320px;
+        padding-right: 10px;
+        padding-left: 10px;
+
+    }
+    .meet-speakers h6{
+        text-align: center;
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-top: 0px;
+    }
+    .meet-speakers .h{
+        padding-left: 40px;
+        padding-right: 0px;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        padding-bottom: 20px
+    }
+    .our-value{
+        flex-direction: column;
+        width: 100%;
+        height: 180vh;
+    }
+    .our-left{
+        width: 95%;
+        display: none;
+    }
+    .our-right{
+        width: 95%;
+    }
+    .our-r-top{
+        padding: 10px ;
+        height: 350px;
+        margin-left: 10px;
+    }
+    
+    .our-r-top h3{
+        text-align: center;
+    }
+    .our-r-top h1{
+        font-size: 2rem;
+        padding: 10px;
+    }
+    .our-r-bottom{
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-top: 50px;
+        padding: 0px;
+        width: 100%;
+        flex-direction: column;
+        height: 50vh;
+    }
+    .our-box{
+        width: 95%;
+        border: 1px solid black;
+        padding: 10px;
+        margin-left: 20px;
+        border-radius: 20px;
+    }
+    .exhibitors h1{
+        font-size: 2rem;
+    }
+    
+    .objective{
+        width: 95%;
+        margin: auto;
+        flex-direction: column-reverse;
+    }
+    .obj-left{
+        width: 95%;
+        padding: 0px;
+        margin: 0px;
+    }
+    .obj-right{
+        padding-left: 0px;
+        margin-left: 0px;
+        margin-top: 30px;
+        width: 95%;
+
+    }
+    .obj-right .a-left{
+        height: 250px;
+        width:320px;
+    }
+}

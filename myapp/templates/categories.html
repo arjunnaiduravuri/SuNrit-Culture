@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Website</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<style>
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 110px;
+    border-bottom: 1px solid gainsboro;
+    position: relative;
+}
+
+.dashboard-button{
+    background-color: white;
+    border: 1px solid rgb(58, 107, 241);
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: large;
+    color: rgb(58, 107, 241);
+}
+.breadcrumb{
+    height: 35px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1px solid rgb(211, 213, 211);
+    margin: 15px 20px;
+}
+.breadcrumb a{
+    text-decoration: none;
+}
+/* Sidebar */
+aside {
+    background-color:white;
+    padding: 20px;
+    width: 90px;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    bottom: 0;
+    transition: width 0.3s; /* Smooth transition for width change */
+}
+
+aside:hover {
+    width:230px; /* Adjust width to fit content on hover */
+    background-color:white;
+}
+
+aside h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+    background-color:white;
+    margin: 5px;   
+}
+
+aside ul li {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 20px;
+    
+}
+aside ul li .icon {
+    color:gray; /* Change icon color to rgb(58, 107, 241) */
+    transition: transform 0.3s ease; /* Smooth rotation transition */
+}
+
+aside ul li a {
+    color: rgb(58, 107, 241);
+    text-decoration: none;   
+}
+
+.icon-name {
+    display: none;
+}
+
+.icon {
+    font-size: 24px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+/* Increase icon size */
+aside ul li .icon {
+    font-size: 20px;
+    color: gray;
+    background-color: transparent;
+}
+
+/* Show icon names on hover */
+aside:hover ul li .icon-name {
+    display: inline;
+    margin-left: 10px;
+    background-color: transparent;
+    color: rgb(58, 107, 241);
+}
+
+.smiley-icon {
+    font-size: 50px;
+    cursor: pointer;
+    color: rgb(58, 107, 241);
+    background-color: white;
+}
+
+/* Hide subcategories by default */
+.subcategories {
+    display: none;
+}
+
+/* Show subcategories when the class is applied */
+.subcategories-visible {
+    display: flex;
+    flex-direction: column;
+}
+.main-category{
+    display: flex;
+    flex-direction: column;
+}
+.toggle-button {
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    padding: 5px 20px; /* Adjust padding as needed */
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(58, 107, 241);
+    outline: none;
+}
+.collapse{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    
+}
+.collapse a{
+    padding-left: 15px;
+}
+aside{
+    overflow: hidden;
+}
+.gg .icon{
+    font-weight: bolder;
+}
+img{
+   height: 30px;
+   width: 30px;
+}
+
+.icon-name {
+    display: none;
+}
+
+/* Smiley icon */
+.smiley-icon {
+    font-size: 50px;
+    cursor: pointer;
+    color: rgb(58, 107, 241);
+    background-color: white;
+}
+
+/* Table */
+table {
+    width: calc(100% - 150px); /* Adjusted width to avoid overlapping with sidebar */
+    border-collapse: collapse;
+    background-color: white; /* Background color set to white */
+    margin-top: 50px;
+    margin-left: 150px;
+     
+}
+
+th, td {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color:whitesmoke;
+    color: rgb(58, 107, 241);
+    font-weight: 100;
+}
+td{
+    background-color:white;  
+}
+td:hover{
+    background-color: whitesmoke;
+}
+
+.actions {
+    text-align: center;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    background-color: transparent;
+}
+
+.action-buttons button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.action-buttons button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* Flex container for event section */
+.event-section {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+.event-label{
+    margin: 10px;
+}
+
+.event-label {
+    display: flex;
+    align-items: center;
+}
+
+.event-label p {
+    margin-left: 25px;
+}
+
+.add-new-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.add-new-button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* Button icons */
+.action-buttons button i {
+    margin-right: 5px;
+}
+
+/* Confirmation modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+}
+
+.modal-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-btns button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.modal-btns button:hover {
+    background-color: #d32f2f;
+    
+}
+/* Icon */
+ 
+.add-new-button{
+    padding: 15px 26px 15px 26px;
+    font-size: large;
+    border-radius: 9px;
+}
+
+/* Thumb Image Style */
+.thumb-img {
+    width: 100px;
+    height: 100px;
+    border: 3px solid rgb(58, 107, 241);
+}
+
+</style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-left">
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-item" href="dashboard.html">Dashboard</a>
+                    <span class="breadcrumb-item active" aria-current="page">categories</span>
+                </nav>
+                
+            </div>
+        </nav>
+       
+    </header>
+
+<aside>
+    <ul>
+        <li class="img">
+            <a href=""><img src="https://eventmie.classiebit.com/storage/settings/February2024/iC99LPYEaUTVhWOuAi0j.png" alt=""></a>
+        </li>
+        <li ><a href="../Admin/admin.html"><i class="fas fa-smile icon"></i><span class="icon-name">Admin</span></a></li>
+        <li ><a href="dashboard.html"><i class="fas fa-tachometer-alt icon"></i><span class="icon-name">Dashboard</span></a></li>
+        <li class="gg">
+            <a href="#dh1"data-bs-toggle="collapse"><i class="bi bi-shop icon"></i><span class="icon-name">Manage Events</a>
+            <div class="collapse" id="dh1">
+                <a href="index.html"><i class="bi bi-calendar3"></i><span> Events</span></a>
+                <a href="categories.html"><i class="bi bi-list-ul"></i><span> Categories</span></a>
+                <a href="news.html"><i class="bi bi-newspaper"></i><span> News</span></a>
+            </div>
+        </li>
+        <li>
+            <a href="#dh2" data-bs-toggle="collapse"><i class="fas fa-book icon"></i><span class="icon-name">Manage Bookings</span></a>
+            <div id="dh2" class="collapse">
+                <a href="bookings.html"><i class="bi bi-currency-dollar"></i><span> Bookings</span></a>
+            </div>
+        </li>
+        <li><a href="mainusers.html"><i class="fas fa-users-cog icon"></i><span class="icon-name">Manage Users</span></a></li>
+        <li>
+            <a href="#dh3" data-bs-toggle="collapse"><i class="fas fa-cogs icon"></i><span class="icon-name">Manage Site</span></a>
+            <div class="collapse" id="dh3">
+                <a href="../Manage/banners.html"><i class="bi bi-image"></i><span> Banners</span></a>
+                <a href="../pages/page.html"><i class="bi bi-file-earmark-fill"></i><span> Pages</span></a>
+                <a href="../Media/mainmedia.html"><i class="bi bi-images"></i> <span>Media</span></a>
+            </div>
+        </li>
+        <li><a href="contact.html"><i class="fas fa-address-book icon"></i><span class="icon-name">Contacts</span></a></li>
+        <li><a href="settings.html"><i class="fas fa-cog icon"></i><span class="icon-name">Settings</span></a></li>
+        <li><a href="mainusers.html"><i class="fas fa-users icon"></i><span class="icon-name">Users</span></a></li>
+    </ul>
+</aside>
+
+<!-- Flex container for event section -->
+<div class="event-section">
+    <div class="event-label">
+        <i class="fas fa-th-list smiley-icon" style="background-color: transparent;"></i>
+        <p style="  color:rgb(58, 107, 241); font-size: xx-large ;">Categories</p>
+    </div>
+    <button class="add-new-button" onclick="addColumn()">Add New</button>
+    <button class="add-new-button" style="background-color: rgb(224, 85, 50); color: white;" id="bulkDeleteBtn"><i class="fas fa-trash-alt" style="color: white; background-color: transparent;"></i> Bulk Delete</button>
+    <button class="add-new-button" style="background-color: rgb(74, 116, 233); color: white;"><i class="fas fa-th-large" style="color: white; background-color: rgb(58, 107, 241);"></i> Order</button>
+</div>
+
+ <!-- Confirmation modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>Are you sure you want to delete selected item(s)?</p>
+        <div class="modal-btns">
+            <button id="confirmDelete" style="background-color: #f44336;">Delete</button>
+            <button id="cancelDelete">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the bulk delete button
+    var bulkDeleteBtn = document.getElementById("bulkDeleteBtn");
+
+    // Add event listener to display modal when bulk delete button is clicked
+    bulkDeleteBtn.addEventListener('click', function() {
+        modal.style.display = "block";
+    });
+
+    // Add event listener to cancel delete action
+    document.getElementById("cancelDelete").addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // Add event listener to confirm delete action
+    document.getElementById("confirmDelete").addEventListener("click", function() {
+        modal.style.display = "none";
+        // Perform bulk delete or individual delete here
+        var checkboxes = document.querySelectorAll('.rowCheckbox:checked');
+        checkboxes.forEach(function(checkbox) {
+            var row = checkbox.closest('tr');
+            row.remove();
+        });
+    });
+
+    // Add event listener to select all checkbox
+    document.getElementById("selectAllCheckbox").addEventListener("change", function() {
+        var checkboxes = document.querySelectorAll('.rowCheckbox');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = this.checked;
+        });
+    });
+
+    // Add event listener to delete buttons
+    var deleteButtons = document.querySelectorAll('.deleteBtn');
+    deleteButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var row = this.closest('tr');
+            row.remove();
+        });
+    });
+
+    // Function to handle adding a new column (redirect to add_category.html)
+    function addColumn() {
+        window.location.href = "add_category.html";
+    }
+
+    // Function to handle editing category (redirect to edit_category.html)
+    function editCategory(url) {
+        window.location.href = url;
+    }
+
+    // Function to handle viewing category (redirect to category_view.html)
+    function viewCategory(url) {
+        window.location.href = url;
+    }
+});
+</script>
+
+<table>
+    <thead>
+        <tr>
+            <th><input type="checkbox" id="selectAllCheckbox"></th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Slug</th>
+            <th>Thumb</th>
+            <th>Updated At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox" class="rowCheckbox"></td>
+            <td>2</td>
+            <td>Sample Name 2</td>
+            <td>sample-name-2</td>
+            <td><img class="thumb-img" src="images/3w0ksLJ82BzBPTycEDk6D6nOic.webp" alt="Thumbnail Image"></td>
+            <td>2024-05-07 10:30:00</td>
+            <td class="actions">
+                <div class="action-buttons">
+                    <button onclick="viewCategory('category_view.html')" style="font-weight: bold; background-color: #2196F3; color: white; padding: 8px 16px; border-radius: 5px;">
+                        <i class="fas fa-eye" style="background-color: transparent; font-size: medium;"></i> View
+                    </button>
+                    <button onclick="editCategory('add_category.html')" style="font-weight: bold; background-color: #4CAF50; color: white; padding: 8px 16px; border-radius: 5px;">
+                        <i class="fas fa-edit" style="background-color: transparent; font-size: medium;"></i> Edit
+                    </button>
+                    <button class="deleteBtn" style="font-weight: bold; background-color: #f44336; color: white; padding: 8px 16px; border-radius: 5px;">
+                        <i class="fas fa-trash-alt" style="background-color: transparent; font-size: medium;"></i> Delete
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("bulkDeleteBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Add event listener to select all checkbox
+    document.getElementById("selectAllCheckbox").addEventListener("change", function() {
+        var checkboxes = document.getElementsByClassName("rowCheckbox");
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = this.checked;
+        }
+    });
+
+         // Add event listener to delete buttons
+    var deleteButtons = document.querySelectorAll('.deleteBtn');
+    deleteButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var row = this.closest('tr'); // Find the closest row element
+            row.remove(); // Remove the row from the table
+        });
+    });
+
+
+    // Add event listener to confirm delete button
+    document.getElementById("confirmDelete").addEventListener("click", function() {
+        modal.style.display = "none";
+        // Perform bulk delete or individual delete here
+        var checkboxes = document.getElementsByClassName("rowCheckbox");
+        for (var i = checkboxes.length - 1; i >= 0; i--) {
+            if (checkboxes[i].checked) {
+                var row = checkboxes[i].parentNode.parentNode; // Get the parent row of the checkbox
+                row.parentNode.removeChild(row); // Remove the row from the table
+            }
+        }
+    });
+
+    // Function to handle adding a new column
+    function addColumn(){
+        window.location.href = "add_category.html"; 
+    }
+    // Function to handle editing category
+    function editCategory(url) {
+        window.location.href = "add_category.html";
+    }
+
+
+    // Function to handle viewing category
+    function viewCategory(id, name, slug, thumb, updatedAt) {
+            window.location.href = `category_view.html?id=${id}&name=${encodeURIComponent(name)}&slug=${slug}&thumb=${thumb}&updatedAt=${updatedAt}`;
+        }
+    
+     // Add event listener to bulk delete button
+     var bulkDeleteBtn = document.getElementById('bulkDeleteBtn');
+    bulkDeleteBtn.addEventListener('click', function() {
+        var confirmation = confirm('Are you sure you want to delete selected item(s)?');
+        if (confirmation) {
+            var checkboxes = document.querySelectorAll('input.rowCheckbox:checked');
+            checkboxes.forEach(function(checkbox) {
+                var row = checkbox.closest('tr'); // Find the closest row element
+                row.remove(); // Remove the row from the table
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

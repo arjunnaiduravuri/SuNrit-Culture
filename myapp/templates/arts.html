@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture Arts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://static.wixstatic.com/media/d31c1e_bbde22cd77794ee695a25115cab2fabf~mv2.png/v1/fill/w_63,h_75,al_c,lg_1,q_85,enc_auto/Untitled.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "contact1.css" %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        .p3-1 {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping to the next line */
+            justify-content: space-between; /* Distributes space between flex items */
+            width: 70%;
+            margin: 20px auto;
+            gap: 20px; /* Adjust the gap between items as needed */
+        }
+        
+        .main {
+            width: calc(33.333% - 20px); /* Ensure three items per row, accounting for gaps */
+            height: 400px;
+            border: 1px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px; /* Ensure spacing between rows */
+        }
+        
+        .top {
+            width: 100%;
+            height: 80%;
+            overflow: hidden;
+            font-family: "Playfair Display", serif;
+        }
+        
+        .image {
+            width: 100%;
+            height: 70%;
+        }
+        
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .info {
+            width: 100%;
+            height: 400px;
+            background-color: white;
+            padding: 30px 20px;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .info::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .info::-webkit-scrollbar-thumb {
+            background-color: rgb(211, 209, 209);
+            border-radius: 10px;
+        }
+        
+        .main:hover .info {
+            transform: translateY(-250px);
+            overflow: auto;
+        }
+        
+        .info h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .info p {
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .bottom {
+            width: 100%;
+            height: 20%;
+        }
+        
+        .bottom button {
+            width: 60%;
+            background-color: var(--browncolor);
+            border: none;
+            border-radius: 10px;
+            padding: 6px;
+            margin: 20px 50px;
+        }
+        
+        .bottom button a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .main {
+                width: calc(50% - 20px); /* Two items per row on medium screens */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                width: 100%; /* One item per row on small screens */
+            }
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="n-left">
+                <div class="logo">
+                    <img src="https://static.wixstatic.com/media/d31c1e_bbde22cd77794ee695a25115cab2fabf~mv2.png/v1/fill/w_63,h_75,al_c,lg_1,q_85,enc_auto/Untitled.png" alt="">
+                </div>
+                <div class="n-title">
+                    <h5>SuNrit Culture</h5>
+                    <p>Vedic Traditions in Modern Life</p>
+                </div>
+            </div>
+            <div class="n-right">
+                <li><a href="{% url "Home" %}">Home</a></li>
+                <li ><a href="{% url "About" %}">About Us</a></li>
+                <li ><a href="{% url "Upcoming" %}">Upcoming Events</a></li>
+                <li class="dropdown active" ><a href="" class="dropdown-toggle" data-bs-toggle="dropdown">Our Offerings</a>
+                    <div class="dropdown-content">
+                        <p><a href="{% url "Dance" %}">Cultural Dance</a></p>
+                        <p><a href="{% url "Music" %}">Cultural Music</a></p>
+                        <p><a href="{% url "Arts" %}">Arts & LifeStyle</a></p>
+                    </div>
+                </li>
+                <li ><a href="{% url "Blog" %}">Blog</a></li>
+                <li><a href="{% url "Gallery" %}">Gallery</a></li>
+                <button class="n-button"><a href="{% url "Contact" %}">Contact Us</a></button>
+            </div>
+            <h1 class="burger"><i class="bi bi-list"></i></h1>
+            <div class="mobile-view">
+                
+                <h1 class="x"><i class="bi bi-x-lg"></i></h1>
+                <li><a href="{% url "Home" %}">Home</a></li>
+                <li><a href="{% url "About" %}">About Us</a></li>
+                <li ><a href="{% url "Upcoming" %}">Upcoming Events</a></li>
+                <li ><a href="#list" data-bs-toggle="collapse" class="drop">Our Offerings<i class="bi bi-chevron-down"></i></a>
+                    <div class="collapse" id="list">
+                        <p><a href="{% url "Dance" %}">Cultural Dance</a></p>
+                        <p><a href="{% url "Music" %}">Cultural Music</a></p>
+                        <p><a href="{% url "Arts" %}">Arts & LifeStyle</a></p>
+                    </div>
+                </li>
+                <li><a href="{% url "Blog" %}">Blog</a></li>
+                <li><a href="{% url "Gallery" %}">Gallery</a></li>
+                <button class="n-button"><a href="{% url "Contact" %}">Contact Us</a></button>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="hy">
+            <div class="hy-left">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://static.wixstatic.com/media/11062b_3c17402cc393415f83639b540279eea2~mv2.jpg/v1/fill/w_533,h_375,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_3c17402cc393415f83639b540279eea2~mv2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://st.adda247.com/https://wpassets.adda247.com/wp-content/uploads/multisite/sites/5/2023/04/11183711/GES.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2016/12/28/Pictures/jewel-in-the-crown_d6a83268-ccef-11e6-b3cb-dcd306bf19b8.JPG" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://authindia.com/wp-content/uploads/2022/12/importance-of-Indian-art-culture2.jpg" alt="">
+                        </div>
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </div>
+            <div class="hy-right">
+                <h1>Culture Arts</h1>
+                <h6>Helping the Community</h6>
+                <p>At Sunticulture, we are dedicated to stepping up our efforts in supporting South Asian arts initiatives led by other organisations or community groups. We are always striving to make a difference, and invite you to learn more and lend your support.</p>
+                <button><a href="{% url "Contact" %}">Learn More</a></button>
+            </div>
+        </div>
+        <div class="part-2">
+            <h2>Events</h2>
+            <div class="p3-1">
+                {% for event in events %}
+                    <div class="main">
+                        <div class="top">
+                            <div class="image">
+                                <img src="{{ event.Banner.url }}" alt="">
+                            </div>
+                            <div class="info">
+                                <h1>{{ event.Eventname }}</h1>
+                                <p>{{ event.Start_date }} | {{ event.Start_time }}</p>
+                                <p>{{ event.Venue }}</p>
+                                <p>{{ event.Desc }}</p>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <button><a href="eventdetails/{{event.id}}">Details</a></button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="part-3">
+            <h2>Gallery</h2>
+            <div class="p3">
+                <div class="gallery">
+                    <div class="swiper mySwiper1">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://st.adda247.com/https://wpassets.adda247.com/wp-content/uploads/multisite/sites/5/2023/04/11183711/GES.jpg" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFpuYryB7oj8bmG5JNnL3KMA16cjF61HWypvoA2Vo14g&s" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://i.pinimg.com/236x/c6/46/e4/c646e46e923bf9859e57800515bab981.jpg" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQe-EdaA70ykXGIHEsDzMz88gtzfSM91WVmWe2_I5NHQ&s" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://cdn11.bigcommerce.com/s-x49po/products/17364/images/285430/1483244172650_twolady__61683.1687421301.500.659.jpg?c=2" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://www.bworldonline.com/wp-content/uploads/2022/04/PR-ARTablado-Painting-Your-Future.jpg" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://miro.medium.com/v2/resize:fit:960/1*8NSCzeT91w52QfFSpMYaVw.jpeg" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://wp-assets.rooftopapp.com/wp-content/uploads/2023/09/image-119.png.webp" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="gal">
+                    <div class="swiper mySwiper12">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://st.adda247.com/https://wpassets.adda247.com/wp-content/uploads/multisite/sites/5/2023/04/11183711/GES.jpg" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFpuYryB7oj8bmG5JNnL3KMA16cjF61HWypvoA2Vo14g&s" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://i.pinimg.com/236x/c6/46/e4/c646e46e923bf9859e57800515bab981.jpg" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQe-EdaA70ykXGIHEsDzMz88gtzfSM91WVmWe2_I5NHQ&s" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://cdn11.bigcommerce.com/s-x49po/products/17364/images/285430/1483244172650_twolady__61683.1687421301.500.659.jpg?c=2" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://www.bworldonline.com/wp-content/uploads/2022/04/PR-ARTablado-Painting-Your-Future.jpg" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://miro.medium.com/v2/resize:fit:960/1*8NSCzeT91w52QfFSpMYaVw.jpeg" alt="">
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="image">
+                                <img src="https://wp-assets.rooftopapp.com/wp-content/uploads/2023/09/image-119.png.webp" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="row f-row1">
+            <div class=" f-col1">
+                <div class="n-left">
+                    <div class="logo">
+                        <img src="https://static.wixstatic.com/media/d31c1e_bbde22cd77794ee695a25115cab2fabf~mv2.png/v1/fill/w_63,h_75,al_c,lg_1,q_85,enc_auto/Untitled.png" alt="">
+                    </div>
+                    <div class="n-title">
+                        <h3>SuNrit Culture</h3>
+                        <p>Vedic Traditions in Modern Life</p>
+                    </div>
+                </div>
+                <div class="f-icons">
+                    <a href="https://www.facebook.com/sunritculture/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/sunrit_culture/"><i class="bi bi-instagram"></i> </a>
+                    <a href="https://www.youtube.com/@sunritculture9335"><i class="bi bi-youtube"></i> </a>
+                </div>
+            </div>
+            <div class=" f-col">
+                <div class="ffmm">
+                    <h6 class="h">Company</h6>
+                    <p><a href="{% url "Dance" %}">Events</a></p>
+                    <p><a href="{% url "About" %}">About Us</a></p>
+                    <p><a href="{% url "Contact" %}">Contact</a></p>
+                </div>
+                <div class="ffmm">
+                    <h6 class="h">Quick Links</h6>
+                    <p><a href="{% url "Upcoming" %}">Upcoming Events</a></p>
+                    <p><a href="{% url "Career" %}">Career</a></p>
+                    <p><a href="{% url "Notice" %}">Notice</a></p>
+                </div>
+                <div class="last-f ffmm">
+                    <h6 class="h">Upcoming Event</h6>
+                    <div class="f-up-e upper">
+                        <div class="f-up-ev">
+                            <img src="{% static "assests/images/event_1_1.jpg" %}" alt="">
+                            <p>11 Jan, 2024 New York City</p>
+                            <h6>UI/UX Designer Meetup</h6>
+                            <button><a href="{% url "Contact" %}">GET TICKETS</a></button>
+                        </div>
+                        <div class="f-up-ev">
+                            <img src="{% static "assests/images/event_1_3.jpg" %}" alt="">
+                            <p>12 Jan, 2024 New York City</p>
+                            <h6>Web Developer Meetup</h6>
+                            <button><a href="{% url "Contact" %}">GET TICKETS</a></button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        <div class="f-bottom">
+            <div class="f-bot">
+                <p>© 2024 - SuNrit Culture. All rights reserved</p>
+                <a href="www.seqtto.com"><p>Designed Developed and Maintained by Seqto Software solutions</p></a>
+            </div>
+            <p><a href="{% url "Privacy" %}">Privacy policy</a> / <a href="{% url "Terms" %}">Terms And Conditions</a></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let m = document.querySelector(".mobile-view")
+        document.querySelector(".burger").addEventListener("click",()=>{
+            m.classList.toggle("show")
+        })
+        document.querySelector(".x").addEventListener("click",()=>{
+            m.classList.toggle("show")
+        })
+        
+        const d=document.querySelector(".drop")
+        const di=document.querySelector(".drop i")
+        d.addEventListener("click",(e)=>{
+            if(di.classList.contains("bi-chevron-down")){
+                di.classList.remove("bi-chevron-down")
+                di.classList.add("bi-chevron-up")
+
+            }
+            else{
+                di.classList.remove("bi-chevron-up")
+                di.classList.add("bi-chevron-down")
+            }
+        })
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+        var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        
+      });
+      var swiper = new Swiper(".mySwiper1", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      loop:true,
+      autoplay: {
+          delay: 2300,
+          disableOnInteraction: false,
+        },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    var swiper = new Swiper(".mySwiper12", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop:true,
+      autoplay: {
+          delay: 2300,
+          disableOnInteraction: false,
+        },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    </script>
+</body>
+</html>
