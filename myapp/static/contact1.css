@@ -158,6 +158,7 @@ footer{
 }
 .ffmm p{
     font-size: 0.9rem;
+    width: 100%;
 }
 .f-col p a{
     text-decoration: none;

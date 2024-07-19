@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Event details</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "eventdetails.css" %}">
+    <link rel="stylesheet" href="{% static "eventdetails1.css" %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -62,7 +62,7 @@
             </div>
         </nav>
     </header>
-    <section class="bg-light">
+    <section>
         <div class="starting-image">
             <img src="{{ val.Banner.url }}" alt="">
         </div>
@@ -94,133 +94,17 @@
                     <h4>{{ val.Venue }}</h4>
                 </div>
             </div>
-            <div class="e-info shadow-sm">
-                <div class="icon">
-                    <i class="fa-regular fa-user"></i>
-                </div>
-                <div class="info">
-                    <p class="text-muted">Speakers</p>
-                    <h5>6 Expert Speakers</h5>
-                </div>
-            </div>
+            
         </div>
         <div class="e-content">
             <div class="e-con-left">
-                <h1>{{ val.Eventname }}</h1>
-                <p class="text-muted">{{ val.Desc }}</p>
-                 <div class="e-images">
-                    <div class="e-image">
-                        <img src="{{ val.Banner.url }}" alt="">
-                    </div>
-                </div>
-                <h2>Evolution of user Interface</h2>
-                <p class="text-muted">{{ val.Aboutevent }}</p>
-                <div class="e-points">
-                    <div class="e-point">
-                        <h6><i class="bi bi-patch-check-fill text-primary"></i> Multiple Announcements during the event.</h6>
-                        <h6><i class="bi bi-patch-check-fill text-primary"></i> Acknowledgment and thanks in opening.</h6>
-                    </div>
-                    <div class="e-point">
-                        <h6><i class="bi bi-patch-check-fill text-primary"></i> Dedicated blog post thanking each of our Gold.</h6>
-                        <h6><i class="bi bi-patch-check-fill text-primary"></i> Metting for Globle worming for weatherh6</h6>
-                    </div>
-                </div>
-                <p class="text-muted">Indulge in a variety of culinary delights with food trucks and stalls offering a diverse range of options. Quench your thirst with a selection of beverages available throughout the event. Experience electrifying live performances by [List of Artists/Bands]. From soulful ballads to high-energy beats, our lineup promises a diverse musical journey.</p>
-                <p class="text-muted">Immerse yourself in a fusion of genres, including [Genre 1], [Genre 2], and [Genre 3]. Our carefully curated playlist ensures there's something for every music enthusiast.</p>
-            </div>
-
-            <div class="e-con-right">
-                <div class="e-r-up1 shadow-sm">
-                    <div class="e-r-up">
-                        <div class="e-r-top">
-                            <div class="icon">
-                                <i class="fa-solid fa-crown"></i>
-                            </div>
-                            <div class="info">
-                                <p class="text-muted">Don’t have a ticket?</p>
-                                <h5>Call Sales Support</h5>
-                            </div>
-                        </div>
-                        <div class="price">
-                            <p class="text-muted">Price Start From</p>
-                            <h2 class="text-warning">$50</h2>
-                        </div>
-                    </div>
-                    <button><a href="{{ event.Eventurl }}">BUY TICKETS</a></button>
-                    <p class="text-muted p">All prices exclude 25% VAT</p>
-                </div>
-                <div class="e-r-bottom shadow-sm">
-                    <div class="e-r-follow">
-                        <h4>Follow With Us</h4>
-                    </div>
-                    <div class="apps">
-                        <div class="app">
-                            <i class="fa-brands fa-facebook-f bg-primary text-white"></i>
-                            <p>FACEBOOK</p>
-                         </div>
-                         <div class="app">
-                            <i class="bi bi-twitter bg-info text-white"></i>
-                            <p>TWITTER</p>
-                         </div>
-                    </div>
-                    <div class="apps">
-                        <div class="app">
-                            <i class="bi bi-instagram text-white inst"></i>
-                            <p>INSTAGRAM</p>
-                         </div>
-                         <div class="app">
-                            <i class="fa-brands fa-linkedin-in text-white in"></i>
-                            <p>LINKEDIN</p>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sponsers">
-            <h2 class="h">Our Sponsors</h2>
-            <div class="partners">
-                <div class="partner-slide">
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    <img src="assests/google-1-1.png" alt="" />
-                    <img src="assests/LOGO_1_SAMPLE.jpg" alt="" />
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    <img src="assests/google-1-1.png" alt="" />
-                    <img src="assests/LOGO_1_SAMPLE.jpg" alt="" />
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    <img src="assests/google-1-1.png" alt="" />
-                    <img src="assests/LOGO_1_SAMPLE.jpg" alt="" />
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    
-                </div>
-                <div class="partner-slide">
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    <img src="assests/google-1-1.png" alt="" />
-                    <img src="assests/LOGO_1_SAMPLE.jpg" alt="" />
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    <img src="assests/google-1-1.png" alt="" />
-                    <img src="assests/LOGO_1_SAMPLE.jpg" alt="" />
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    <img src="assests/google-1-1.png" alt="" />
-                    <img src="assests/LOGO_1_SAMPLE.jpg" alt="" />
-                    <img src="https://dcoder.co.in/dist/images/logo/logo.png" alt="" />
-                    
-                </div>
-                <!-- <div class="logo-slide">
-                    <img src={logo1} alt="" />
-                    <img src={logo2} alt="" />
-                    <img src={logo3} alt="" />
-                    <img src={logo4} alt="" />
-                    <img src={logo5} alt="" />
-                    <img src={logo6} alt="" />
-                    <img src={logo7} alt="" />
-                </div> -->
+                <h3>{{ val.Eventname }}</h3>
+                <p class="text-muted">{{ val.Desc}}</p>
             </div>
         </div>
     </section>
     <footer>
-        <div class="row f-row">
+        <div class="row f-row1">
             <div class=" f-col1">
                 <div class="n-left">
                     <div class="logo">
@@ -248,7 +132,7 @@
                 <div class="ffmm">
                     <h6 class="h">Quick Links</h6>
                     <p><a href="{% url "Upcoming" %}">Upcoming Events</a></p>
-                    <p><a href="{% url "Career" %}">Career</a></p>
+                    <p><a href="{% url "Career" %}">Work with Us</a></p>
                     <p><a href="{% url "Notice" %}">Notice</a></p>
                 </div>
                 <div class="last-f ffmm">

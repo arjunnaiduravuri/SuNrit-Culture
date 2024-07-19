@@ -9,103 +9,230 @@
     --yellowcolor:#f7b300;
     --orangecolor:#F24617;
 }
-.n-left{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    height: 100%;
-}
-nav{
-    height: 12vh;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid var(--browncolor);
-}
-.burger, .mobile-view{
-    display: none;
-}
-
-.n-title{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 10px;
-}
-.n-title p{
-    font-size: 1.1rem;
-    font-style: italic;
-}
-.n-title h3{
-    font-family: "Playfair Display", serif;
-    font-weight: 600;
-}
-.n-right{
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-.n-right li{
-    list-style: none;
-    font-size: 1.2rem;
-}
-.n-right li:hover{
-    transform: scale(1.2);
-
-}
-li.active {
-    color: var(--browncolor);
-    transform: scale(1.2);
-}
-li.active a{
-    color: var(--browncolor);
-}
-.n-right a{
-    text-decoration: none;
-    color: black;
-}
-.n-right a:hover{
-    color: var(--browncolor);
-}
-.dropdown{
-    position: relative;
-}
-.dropdown-content{
-    display: none;
-    position: absolute;
-    z-index: 100;
-}
-.dropdown-toggle::after{
-    display: none;
-}
-.dropdown:hover .dropdown-content{
-    display: block;
-    top: 30px;
-    width: 150px;    
-    padding-top: 12px;
-    background-color: rgb(248, 240, 240);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1rem;
-}
-.n-button{
-    background-color: var(--browncolor);
-    padding: 5px 15px;
-    font-size: 1.1rem;
-    color: white;
-    border-radius: 15px;
-    border: none;
-}
-.n-button:hover{
-    transform: scale(1.1);
-}
-.n-button a{
-    color: white;
-    text-decoration: none;
-}
-.n-button a:hover{
-    color: white;
-}
+    .n-left{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+    }
+    .logo{
+        height: 50px;
+        width: 50px;
+    }
+    .logo img{
+        width: 100%;
+        height: 100%;
+    }
+    nav{
+        height: 12vh;
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid var(--browncolor);
+        z-index: 10;
+    }
+    .burger, .mobile-view{
+        display: none;
+    }
+    
+    .n-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    .n-title p{
+        font-size: 0.8rem;
+        font-style: italic;
+    }
+    .n-title h5{
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+    }
+    .n-right{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    .n-right li{
+        list-style: none;
+        font-size: 1rem;
+    }
+    .n-right li:hover{
+        transform: scale(1.2);
+    
+    }
+    li.active {
+        color: #FFB347;
+        transform: scale(1.2);
+    }
+    li.active a{
+        color: #FFB347;
+    }
+    .n-right a{
+        text-decoration: none;
+        color: black;
+    }
+    .n-right a:hover{
+        color: #FFB347;
+    }
+    .dropdown{
+        position: relative;
+        z-index: 9999;
+    }
+    .dropdown-content{
+        display: none;
+        position: absolute;
+    }
+    .dropdown-toggle::after{
+        display: none;
+    }
+    .dropdown:hover .dropdown-content{
+        display: block;
+        top: 25px;
+        left: -15px;
+        width: 150px;    
+        padding-top: 12px;
+        background-color: rgb(248, 240, 240);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+    .n-button{
+        background-color: var(--browncolor);
+        padding: 5px 15px;
+        font-size: 1rem;
+        color: white;
+        border-radius: 15px;
+        border: none;
+    }
+    .n-button:hover{
+        transform: scale(1.1);
+    }
+    .n-button a{
+        color: white;
+        text-decoration: none;
+    }
+    .n-button a:hover{
+        color: white;
+    }
+    footer{
+        background-color: rgb(245, 194, 127);
+    
+        color: var(--browncolor);
+    }
+    .f-row1{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 20px;
+        display: flex;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .f-row1 h6{
+        font-size: 1rem;
+        margin-bottom:25px;
+    }
+    .f-col1{
+        width: 40%;
+    }
+    .f-col{
+        display: flex;
+        gap: 50px;
+        width: 60%;
+    }
+    
+    .f-col .h{
+        position: relative;
+        padding-bottom: 2px;
+    
+    }
+    .f-col .h::after{
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right,#fc8409,white);
+        display: block;
+        position: absolute;
+        top: 40px;
+        left: 0;
+    }
+    .ffmm p{
+        font-size: 0.9rem;
+    }
+    .f-col p a{
+        text-decoration: none;
+        color: var(--browncolor);
+    }
+    .f-col1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .f-up-e{
+        display: flex;
+        gap: 20px;
+    }
+    .f-up-ev{
+        height: 60px;
+        width: 180px;
+        
+    }
+    .f-up-ev h6{
+        margin-top: -10px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+    .f-up-ev button{
+        font-size: 0.8rem;
+        border: 1px solid white;
+        border-radius: 30px;
+        padding: 5px 20px;
+        background-color: var(--browncolor);
+        font-weight: 500;
+        margin-top: 0px;
+    }
+    .f-up-ev button a{
+        text-decoration: none;
+        color: white;
+    }
+    .f-up-ev img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        
+    }
+    .f-bottom{
+        height: 55px;
+        padding-left:100px;
+        padding-right:100px;
+        padding-top: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .f-bottom p{
+        font-size: 0.8rem;
+        padding-bottom: 0px;
+    }
+    .f-bottom a{
+        text-decoration: none;
+        color: var(--browncolor);
+    }
+    .f-icons {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        display: flex;
+        gap: 48px;
+        justify-content:left;
+        margin-left: -48px;
+    }
+    .f-icons a{
+        color: var(--browncolor);
+    }
+    .f-icons i:hover{
+        transform: scale(1.2);
+    }
 .starting-image{
     width: 80%;
     height: 550px;
@@ -124,7 +251,7 @@ li.active a{
     justify-content: space-between;
 }
 .e-info{
-    height: 100px;
+    height: 80px;
     width: 23%;
     display: flex;
     gap: 15px;
@@ -134,9 +261,9 @@ li.active a{
     border-radius: 30px;
 }
 .icon i{
-    height: 60px;
-    width: 60px;
-    font-size: 2rem;
+    height: 40px;
+    width: 40px;
+    font-size: 1.5rem;
     background-color: var(--browncolor);
     color: white;
     border-radius: 20px;
@@ -145,8 +272,11 @@ li.active a{
     justify-content: center;
 }
 .info p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 5px;
+}
+.info h4{
+    font-size: 1rem;
 }
 .e-content{
     width: 80%;
@@ -160,9 +290,11 @@ li.active a{
     border: 1px solid rgb(240, 240, 240);
     border-top-right-radius: 30px;
 }
-
+.e-con-left{
+    font-size: 1.5rem;
+}
 .e-con-left p{
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding-top: 15px;
     padding-right:20px ;
 }
@@ -344,7 +476,7 @@ tr td:hover{
     top: 5px;
     right: 10px;
   } */
-  footer{
+  /* footer{
     background-color: black;
     color: white;
 }
@@ -446,7 +578,7 @@ tr td:hover{
 }
 .f-icons i:hover{
     transform: scale(1.2);
-}
+} */
 .sponsers .h{
     margin-top: -50px;
     font-size: 3rem;
@@ -608,24 +740,24 @@ tr td:hover{
         width: 100%;
         padding-bottom: 80px;
     }
-    .f-row{
+    .f-row1{
         flex-direction: column;
         margin-left: 0px;
         width: 100%;
         padding: 0px;
         padding-top: 50px;
-        height: 85vh;
-        gap: 20px;
+        height: 95vh;
+
     }
     .f-col1{
         width: 100%;
     }
     .f-col{
-       flex-direction: row;
-       flex-wrap: wrap;
-       gap: 0px;
-       width: 100%;
-       height:350px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0px;
+    width: 100%;
+    height:350px;
     }
     .ffmm .upper{
         width: 100%;
@@ -637,9 +769,14 @@ tr td:hover{
     .f-col .ffmm{
         width: 50%;
     }
+    .f-row1{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
     .f-col p a{
         text-decoration: none;
-        color: white;
+        color: var(--browncolor);
     }
     .f-bottom{
         padding-left: 10px;
